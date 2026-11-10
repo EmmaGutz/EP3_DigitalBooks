@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools" android:id="@+id/main" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:background="#FFFFFF" tools:context=".HomeActivity">
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="22dp"
+        android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+
+    <TextView
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:text="INICIO"
+    android:textColor="#161616"
+    android:textSize="36sp"
+    android:textStyle="bold"
+    android:fontFamily="serif"
+        />
+
+    <ImageView android:layout_width="86dp"
+        android:layout_height="86dp"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+        android:contentDescription="Logo DigitalBooks"/>
+
+    </LinearLayout>
+
+    <EditText
+    android:id="@+id/buscadorLibros"
+    android:layout_width="match_parent"
+    android:layout_height="48dp"
+    android:layout_marginTop="12dp"
+    android:background="@drawable/home_search_bg"
+    android:drawableStart="@android:drawable/ic_menu_search"
+    android:drawablePadding="12dp"
+    android:paddingHorizontal="14dp"
+    android:singleLine="true"
+    android:inputType="text"
+    android:hint="Buscar libros"
+    android:imeOptions="actionSearch"
+    android:textColor="#202020"
+    android:textColorHint="#757575"
+    android:textSize="15sp"/>
+
+<FrameLayout
+    android:id="@+id/contenedorDestacados"
+    android:layout_width="match_parent"
+    android:layout_height="115dp"
+    android:layout_marginTop="22dp"
+    android:layout_marginHorizontal="24dp"
+    android:background="@drawable/home_banner"
+    android:contentDescription="Espacio reservado para libros destacados"
+    />
+
+    <TextView
+    android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:text="●    ●    ●"
+        android:gravity="center"
+        android:textColor="#202020"
+        android:textSize="18sp"
+        />
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/chipFiccion"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="6dp"
+        android:gravity="center"
+        android:text="Ficción"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/chip_off"
+        android:textColor="#202020"/>
+
+    <TextView
+        android:id="@+id/chipCiencia"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_weight="1"
+        android:layout_marginEnd="6dp"
+        android:gravity="center"
+        android:text="Ciencia"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/chip_off"
+        android:textColor="#202020"/>
+
+    <TextView
+        android:id="@+id/chipHistoria"
+        android:layout_width="0dp"
+        android:layout_height="38dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="Historia"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/chip_off"
+        android:textColor="#202020"/>
+</LinearLayout>
+
+    <TextView
+    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:id="@+id/tvTituloSeccion"
+        android:text="Libros gratuitos del momento"
+        android:textColor="#202020"
+        android:fontFamily="serif"
+        android:textSize="17sp"
+        />
+
+<ProgressBar
+    android:id="@+id/barraCargaLibros"
+    style="?android:attr/progressBarStyleSmall"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+    android:visibility="gone" />
+
+<TextView
+    android:id="@+id/tvEstadoLibros"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:padding="14dp"
+    android:textColor="#4B4B4B"
+    android:textSize="14sp"
+    android:visibility="gone" />
+
+<GridLayout
+    android:id="@+id/cuadriculaLibros"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="3"
+    android:rowCount="3"
+    android:useDefaultMargins="false">
+
+<FrameLayout
+    android:id="@+id/libro_1"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 1"/>
+
+<FrameLayout
+    android:id="@+id/libro_2"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 2"
+    />
+
+<FrameLayout
+    android:id="@+id/libro_3"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 3"
+    />
+
+<FrameLayout
+    android:id="@+id/libro_4"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 4"
+    />
+
+<FrameLayout
+    android:id="@+id/libro_5"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 5"
+    />
+
+<FrameLayout
+    android:id="@+id/libro_6"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 6"
+    />
+
+<FrameLayout
+    android:id="@+id/libro_7"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 7"
+    />
+
+<FrameLayout
+    android:id="@+id/libro_8"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 8"
+    />
+
+<FrameLayout
+    android:id="@+id/libro_9"
+    android:layout_width="0dp"
+    android:layout_height="112dp"
+    android:layout_margin="5dp"
+    android:layout_columnWeight="1"
+    android:background="@drawable/home_book_placeholder"
+    android:contentDescription="Espacio para libro 9"
+    />
+
+</GridLayout></LinearLayout></ScrollView>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:background="@drawable/home_nav_bg"
+    android:gravity="center" android:orientation="horizontal">
+
+<TextView
+    android:id="@+id/navInicio"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:text="⌂"
+    android:textSize="32sp"
+    android:textColor="#202020"
+    android:contentDescription="Inicio"
+    />
+
+<TextView
+    android:id="@+id/navCategorias"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:text="☷"
+    android:textSize="32sp"
+    android:textColor="#202020"
+    android:contentDescription="Categorías"
+    />
+
+<TextView
+    android:id="@+id/navGuardados"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:text="▮"
+    android:textSize="32sp"
+    android:textColor="#202020"
+    android:contentDescription="Guardados"
+    />
+
+<TextView
+    android:id="@+id/navPerfil"
+    android:layout_width="0dp"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:gravity="center"
+    android:text="◉"
+    android:textSize="32sp"
+    android:textColor="#202020"
+    android:contentDescription="Perfil"
+    />
+
+</LinearLayout></LinearLayout>

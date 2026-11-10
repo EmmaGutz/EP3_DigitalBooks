@@ -1,0 +1,30 @@
+DIGITALBOOKS - PROYECTO CORREGIDO
+
+ABRIR EN ANDROID STUDIO
+1. Descomprime DigitalBooks_Corregido.zip.
+2. En Android Studio selecciona Open (Abrir).
+3. Selecciona la carpeta DigitalBooks (la que contiene settings.gradle.kts).
+4. Espera a que finalice Sync Project with Gradle Files.
+5. Ejecuta la aplicación en un teléfono o emulador con acceso a Internet.
+
+CAMBIOS HECHOS
+- Funciona la tecla Buscar del teclado y se puede tocar la lupa del buscador.
+- Los botones Ficción, Ciencia e Historia ejecutan búsquedas por categoría.
+- Consulta obras de lectura pública mediante Open Library, sin clave privada.
+- Si no hay libros, intenta Google Books como segundo catálogo.
+- Se eliminó del código la clave API antigua que estaba expuesta.
+- Se muestran avisos de carga, sin resultados y error de conexión (con reintento).
+- Ya no se muestran los nueve recuadros vacíos cuando no llegan resultados.
+- Se guardan resultados de búsquedas exitosas para aprovecharlos sin conexión.
+- Mantiene el diseño original de la pantalla.
+- Se ajustó AGP a 9.2.1 y Gradle a 9.4.1 para Android Studio compatible.
+
+IMPORTANTE
+- Los libros se consultan por Internet; sin conexión se puede mostrar una búsqueda guardada anteriormente.
+- Algunas fichas no tienen portada; en ese caso se muestra su título.
+- Tocar un libro abre su ficha para leerlo en la fuente correspondiente.
+- No todas las obras del catálogo son descargables; el filtro de Open Library
+  solicita el nivel ebook_access:public para permitir lectura pública.
+- Si necesitas usar una clave de Google Books para un producto comercial,
+  créala y restríngela en Google Cloud; nunca la publiques dentro del código.
+- Este ZIP contiene el proyecto fuente, no un APK instalado ni una prueba en un teléfono.
